@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+
+    <!-- effects -->
+    <link rel="stylesheet" type="text/css" href="./stylesheets/jquery-ui.css">
+    <!-- effects -->
+
+    <title>Online Paint</title>
+  </head>
+  <body>
+ 		<div class="container">
+ 			<div class="row no-gutters">
+ 				<div class="col-1 sidebar"> <!-- sidebar -->
+ 					<div class="row no-gutters">
+ 						<div class="col-6" id="pen"><i class="fas fa-pen fa-3x fa-fw"></i></div>
+ 						<div class="col-6" id="eraser"><i class="fas fa-eraser fa-3x fa-fw"></i></div>	
+ 					</div>
+ 					<div class="row no-gutters">
+ 						<div class="col-6" id="line"><i class="fas fa-long-arrow-alt-right fa-3x fa-fw"></i></div>
+ 						<div class="col-6" id="rectangle"><i class="far fa-square fa-3x fa-fw"></i></div>	
+ 					</div>
+ 					
+ 					<div class="row no-gutters">
+ 						<div class="col-6" id="circle"><i class="far fa-circle fa-3x fa-fw"></i></div>
+ 						<div class="col-6" id="font"><i class="fas fa-font fa-3x fa-fw"></i></div>	
+ 					</div>
+
+ 					<div class="row no-gutters">
+ 						<div class="col-6" id="polygon"><i class="fas fa-draw-polygon fa-3x fa-fw"></i></div>
+ 					</div>
+
+ 					<hr>
+ 				
+ 					<div class="row no-gutters">
+	 					<div class="btn-group dropright">
+						  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+						    Stroke
+						  </button>
+						  <div class="dropdown-menu color-picker stroke">
+						    <div class="row">
+						    	<div class="col-3 black" style="background-color: black;"></div>
+						    	<div class="col-3 red" style="background-color: red;"></div>
+						    	<div class="col-3 orange" style="background-color: orange;"></div>
+						    	<div class="col-3 yellow" style="background-color: yellow;"></div>
+						    </div>
+
+						    <div class="row">
+						    	<div class="col-3 fuchsia" style="background-color: fuchsia;"></div>
+						    	<div class="col-3 lime" style="background-color: lime;"></div>
+						    	<div class="col-3 teal" style="background-color: teal;"></div>
+						    	<div class="col-3 aqua" style="background-color: aqua;"></div>
+						    </div>
+
+						    <div class="row">
+						    	<div class="col-3 blue" style="background-color: blue;"></div>
+						    	<div class="col-3 navy" style="background-color: navy;"></div>
+						    	<div class="col-3 silver" style="background-color: silver;"></div>
+						    	<div class="col-3 white" style="background-color: white;"></div>
+						    </div>
+						  </div>
+						</div>
+ 					</div>
+
+ 					<div class="row no-gutters">
+	 					<div class="btn-group dropright">
+						  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+						    Fill
+						  </button>
+						  <div class="dropdown-menu color-picker fill">
+						    <div class="row">
+						    	<div class="col-3 black" style="background-color: black;"></div>
+						    	<div class="col-3 red" style="background-color: red;"></div>
+						    	<div class="col-3 orange" style="background-color: orange;"></div>
+						    	<div class="col-3 yellow" style="background-color: yellow;"></div>
+						    </div>
+
+						    <div class="row">
+						    	<div class="col-3 fuchsia" style="background-color: fuchsia;"></div>
+						    	<div class="col-3 lime" style="background-color: lime;"></div>
+						    	<div class="col-3 teal" style="background-color: teal;"></div>
+						    	<div class="col-3 aqua" style="background-color: aqua;"></div>
+						    </div>
+
+						    <div class="row">
+						    	<div class="col-3 blue" style="background-color: blue;"></div>
+						    	<div class="col-3 navy" style="background-color: navy;"></div>
+						    	<div class="col-3 silver" style="background-color: silver;"></div>
+						    	<div class="col-3 white" style="background-color: white;"></div>
+						    </div>
+						  </div>
+						</div>
+ 					</div>
+
+ 					<div class="row no-gutters">
+	 					<div class="btn-group dropright">
+						  <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
+						    Bg
+						  </button>
+						  <div class="dropdown-menu color-picker bg" id="background">
+						    <div class="row">
+						    	<div class="col-3 black" style="background-color: black;"></div>
+						    	<div class="col-3 red" style="background-color: red;"></div>
+						    	<div class="col-3 orange" style="background-color: orange;"></div>
+						    	<div class="col-3 yellow" style="background-color: yellow;"></div>
+						    </div>
+
+						    <div class="row">
+						    	<div class="col-3 fuchsia" style="background-color: fuchsia;"></div>
+						    	<div class="col-3 lime" style="background-color: lime;"></div>
+						    	<div class="col-3 teal" style="background-color: teal;"></div>
+						    	<div class="col-3 aqua" style="background-color: aqua;"></div>
+						    </div>
+
+						    <div class="row">
+						    	<div class="col-3 blue" style="background-color: blue;"></div>
+						    	<div class="col-3 navy" style="background-color: navy;"></div>
+						    	<div class="col-3 silver" style="background-color: silver;"></div>
+						    	<div class="col-3 white" style="background-color: white;"></div>
+						    </div>
+						  </div>
+						</div>
+ 					</div>
+
+ 					<!-- this is the effects slider -->
+
+ 					<div class="row no-gutters">
+	 					<div class="btn-group dropright">
+						  <button type="button" class="btn btn-secondary dropdown-toggle effects" data-toggle="dropdown">
+						    Filter
+						  </button>
+						  <div class="dropdown-menu effects keep-open">
+						    <div id="mother-slider">
+						    	<div class="effect_container">
+								    	<input type="checkbox" name="grayscale" id="grayscale">
+								    	<label for="grayscale">Grayscale</label>						    		
+							    		<div class="100-percent" id="grayscale-slider"></div>						    		
+						    	</div>
+
+						    	<div class="effect_container">
+							    	<input type="checkbox" name="invert" id="invert">
+							    	<label for="invert">Invert</label>
+							    	<div id="invert-slider"></div>						    		
+						    	</div>
+
+						    	<div class="effect_container">
+							    	<input type="checkbox" name="brightness" id="brightness">
+							    	<label for="brightness">Brightness</label>
+							    	<div id="brightness-slider"></div>						    		
+						    	</div>
+						    	<div class="effect_container">
+							    	<input type="checkbox" name="saturate" id="saturate">
+							    	<label for="saturate">Saturate</label>
+							    	<div class="500-percent" id="saturate-slider"></div>						    		
+						    	</div>
+						    	<div class="effect_container">
+							    	<input type="checkbox" name="contrast" id="contrast">
+							    	<label for="contrast">Contrast</label>
+							    	<div class="500-percent" id="contrast-slider"></div>						    		
+						    	</div>
+						    	<div class="effect_container">
+							    	<input type="checkbox" name="hueRotate" id="hueRotate">
+							    	<label for="hueRotate">Hue Rotate</label>
+							    	<div id="hueRotate-slider"></div>						    		
+						    	</div>
+						    	<div class="effect_container">
+							    	<input type="checkbox" name="blur" id="blur">
+							    	<label for="blur">Blur</label>
+							    	<div id="blur-slider"></div>						    		
+						    	</div>
+						    	<div class="effect_container">
+							    	<input type="checkbox" name="sepia" id="sepia">
+							    	<label for="sepia">Sepia</label>
+							    	<div class="100-percent" id="sepia-slider"></div>						    		
+						    	</div>
+
+						    </div>
+						  </div>
+						</div>
+ 					</div>
+
+ 					<!-- end -->
+
+ 					<hr>
+
+ 					<div class="row no-gutters">
+ 						<div class="col-6"><i class="far fa-arrow-alt-circle-left fa-3x fa-fw" id="undo"></i></div>
+						 <div class="col-6"><i class="redo far fa-arrow-alt-circle-right fa-3x fa-fw" id="redo"></i></div>
+ 					</div>
+
+ 					<div class="row no-gutters">
+ 						<div class="col-12" id="clear">Clear</div>
+ 					</div>
+ 				</div>
+
+ 				<div class="col-9 main-bar"> <!-- main bar -->
+ 					<div class="row no-gutters" id="topbar">
+	 					<div id="thickness">
+ 							<div class="row no-gutters">
+	 							<i class="fas fa-circle fa-fw fa-sm" data-value="2" ></i>
+	 							<i class="fas fa-circle fa-fw fa-lg" data-value="6"></i>
+	 							<i class="fas fa-circle fa-fw fa-2x" data-value="12"></i>
+	 							<i class="fas fa-circle fa-fw fa-3x" data-value="24"></i>
+	 							<i class="fas fa-circle fa-fw fa-4x" data-value="32"></i>
+ 							</div>
+	 							
+	 					</div>
+	 					<div class="row no-gutters" id="font-option">
+							<span class="font_style">
+								<label for="italic">italic</label>
+								<input type="checkbox" name="font_style" id="italic">		
+							</span>
+						
+							<span class="font_weight">
+								<label for="bold">bold</label>
+								<input type="checkbox" name="font_weight" id="bold">									
+							</span>
+
+							<span class="font_size">
+								<label for="font-size">Font Size</label>
+								<select id="font-size">
+									<option value=18>18px</option>
+									<option value=24>24px</option>
+									<option value=36>36px</option>
+								</select> 									
+							</span>
+	 					</div> 						
+ 					</div>
+
+ 					<div class="row no-gutters" id="canvasRect">
+						 <canvas  id="canvasReal" width="832.5" height="509"></canvas>
+						 <canvas  id="canvasDraft" width="832.5" height="509"></canvas>
+ 					</div>
+
+ 				</div>
+ 			</div>
+ 		</div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+	<script type="text/javascript" src="scripts/main.js"></script>
+	<script src="./scripts/common.js"></script>
+	<script src="./scripts/filter.js"></script>
+	<script src="./scripts/commonPaint.js"></script>
+		<script src="./scripts/curve.js"></script>
+		<script src="./scripts/polygon.js"></script>
+		<script src="./scripts/shape.js"></script>
+		<script src="./scripts/text.js"></script>
+		<script src="./scripts/brush.js"></script>
+		<script src="./scripts/eraser.js"></script>
+		<script>
+			document.getElementById('canvasReal').addEventListener('contextmenu', event => event.preventDefault());
+			document.getElementById('canvasDraft').addEventListener('contextmenu', event => event.preventDefault());
+			let current = new Curve();
+			filter = new Filter(context,context2);
+		</script>
+  </body>
+</html>
